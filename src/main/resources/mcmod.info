@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "elderscrollsmod",
+  "name": "Elder Scrolls Mod",
+  "description": "A forge mod to replicate Elder Scrolls in minecraft",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://piggahbrostudios.com",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Dylan Bulmer"],
+  "credits": "Here you go Justin... I hope there's nothing else you want!",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
