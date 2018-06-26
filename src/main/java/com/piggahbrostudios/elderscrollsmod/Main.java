@@ -2,6 +2,7 @@ package com.piggahbrostudios.elderscrollsmod;
 
 import com.piggahbrostudios.elderscrollsmod.proxy.CommonProxy;
 import com.piggahbrostudios.elderscrollsmod.tab.CreativeTab;
+import com.piggahbrostudios.elderscrollsmod.util.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -11,19 +12,16 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = ElderScrollsMod.MODID, name = ElderScrollsMod.NAME, version = ElderScrollsMod.VERSION)
-public class ElderScrollsMod {
-    public static final String MODID = "elderscrollsmod";
-    public static final String NAME = "Elder Scrolls Mod";
-    public static final String VERSION = "1.0";
+@Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
+public class Main {
 
     private static Logger logger;
 
-    @SidedProxy(clientSide = "com.piggahbrostudios.elderscrollsmod.proxy.ClientProxy", serverSide = "com.piggahbrostudios.elderscrollsmod.proxy.CommonProxy")
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
     public static CommonProxy proxy;
 
     @Mod.Instance
-    public static ElderScrollsMod instance;
+    public static Main instance;
 
     public static CreativeTab tab;
 

@@ -4,3 +4,7 @@
 itemGroup.tab_elderscrollsmod=Elder Scrolls Mod
 
 #Items
+item.steel_ingot.name=Steel Ingot
+
+#Blocks
+tile.steel_block.name=Block of Steel
