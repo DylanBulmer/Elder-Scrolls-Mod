@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+
+  "key": {
+    "S": { "item": "elderscrollsmod:steel_nugget" }
+  },
+
+  "result": {
+    "item": "elderscrollsmod:steel_ingot",
+    "count": 1
+  }
+}

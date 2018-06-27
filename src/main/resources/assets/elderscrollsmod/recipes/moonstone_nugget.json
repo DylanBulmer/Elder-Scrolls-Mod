@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    { "item": "elderscrollsmod:moonstone_ingot" }
+  ],
+
+  "result": {
+    "item": "elderscrollsmod:moonstone_nugget",
+    "count": 9
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern": [
+    "M",
+    "I",
+    "S"
+  ],
+
+  "key": {
+    "M": { "item": "elderscrollsmod:moonstone_ingot" },
+    "I": { "item": "minecraft:iron_ingot" },
+    "S": { "item": "minecraft:stick" }
+  },
+
+  "result": {
+    "item": "elderscrollsmod:elven_sword",
+    "count": 1
+  }
+}

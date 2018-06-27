@@ -1,5 +1,6 @@
 package com.piggahbrostudios.elderscrollsmod;
 
+import com.piggahbrostudios.elderscrollsmod.init.ModRecipes;
 import com.piggahbrostudios.elderscrollsmod.proxy.CommonProxy;
 import com.piggahbrostudios.elderscrollsmod.tab.CreativeTab;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
@@ -41,6 +42,8 @@ public class Main {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+
+        ModRecipes.init();
 
         proxy.init(event);
     }

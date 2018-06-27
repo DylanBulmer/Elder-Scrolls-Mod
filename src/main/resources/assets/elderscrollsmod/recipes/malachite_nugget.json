@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    { "item": "elderscrollsmod:malachite_ingot" }
+  ],
+
+  "result": {
+    "item": "elderscrollsmod:malachite_nugget",
+    "count": 9
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent":"item/handheld",
+  "textures": {
+    "layer0": "elderscrollsmod:items/glass_dagger"
+  }
+}

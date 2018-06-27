@@ -1,0 +1,6 @@
+{
+  "parent":"block/cube_all",
+  "textures": {
+    "all": "elderscrollsmod:blocks/malachite_ore"
+  }
+}

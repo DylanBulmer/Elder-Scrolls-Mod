@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern": [
+    "MMM",
+    "MMM",
+    "MMM"
+  ],
+
+  "key": {
+    "M": { "item": "elderscrollsmod:moonstone_ingot" }
+  },
+
+  "result": {
+    "item": "elderscrollsmod:moonstone_block",
+    "count": 1
+  }
+}

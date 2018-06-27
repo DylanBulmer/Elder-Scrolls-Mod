@@ -5,6 +5,21 @@ itemGroup.tab_elderscrollsmod=Elder Scrolls Mod
 
 #Items
 item.steel_ingot.name=Steel Ingot
+item.malachite_ingot.name=Malachite Ingot
+item.moonstone_ingot.name=Moonstone Ingot
+item.moonstone_nugget.name=Moonstone Nugget
+item.malachite_nugget.name=Malachite Nugget
+item.steel_nugget.name=Steel Nugget
 
 #Blocks
 tile.steel_block.name=Block of Steel
+tile.moonstone_block.name=Block of Moonstone
+tile.malachite_block.name=Block of Malachite
+tile.malachite_ore.name=Malachite Ore
+tile.moonstone_ore.name=Moonstone Ore
+
+#Tools
+tile.elven_sword.name=Elven Sword
+tile.elven_dagger.name=Elven Dagger
+tile.glass_sword.name=Glass Sword
+tile.glass_dagger.name=Glass Dagger

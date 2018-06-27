@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern": [
+    "M",
+    "S"
+  ],
+
+  "key": {
+    "M": { "item": "elderscrollsmod:malachite_ingot" },
+    "S": { "item": "minecraft:stick" }
+  },
+
+  "result": {
+    "item": "elderscrollsmod:glass_dagger",
+    "count": 1
+  }
+}
