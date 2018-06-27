@@ -1,15 +1,10 @@
 package com.piggahbrostudios.elderscrollsmod.block;
 
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
+public class MalachiteOre extends BlockOre {
 
-public class MalachiteOre extends BlockBase {
+    public MalachiteOre(String name, String dimension) {
 
-    public MalachiteOre(String name, Material material) {
-        super(name, material);
-
-        // Walking/Running over
-        setSoundType(SoundType.STONE);
+        super(name, dimension);
 
         setHardness(5.0F);
         setResistance(15.0F);

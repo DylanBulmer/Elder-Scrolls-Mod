@@ -4,6 +4,7 @@ import com.piggahbrostudios.elderscrollsmod.init.ModRecipes;
 import com.piggahbrostudios.elderscrollsmod.proxy.CommonProxy;
 import com.piggahbrostudios.elderscrollsmod.tab.CreativeTab;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
+import com.piggahbrostudios.elderscrollsmod.world.World;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -35,6 +36,7 @@ public class Main {
 
         // setup pre init
         proxy.preInit(event);
+        World.mainRegistry();
 
         // get the logger
         logger = event.getModLog();
