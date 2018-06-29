@@ -1,6 +1,9 @@
 package com.piggahbrostudios.elderscrollsmod;
 
 import com.piggahbrostudios.elderscrollsmod.gui.GuiCompass;
+import com.piggahbrostudios.elderscrollsmod.gui.GuiHealth;
+import com.piggahbrostudios.elderscrollsmod.gui.GuiMagika;
+import com.piggahbrostudios.elderscrollsmod.gui.GuiStamina;
 import com.piggahbrostudios.elderscrollsmod.init.Keybinds;
 import com.piggahbrostudios.elderscrollsmod.init.ModRecipes;
 import com.piggahbrostudios.elderscrollsmod.proxy.CommonProxy;
@@ -51,7 +54,14 @@ public class Main {
     public void init(FMLInitializationEvent event) {
 
         ModRecipes.init();
+
         MinecraftForge.EVENT_BUS.register(new HudRenderHandler());
+
+        MinecraftForge.EVENT_BUS.register(new GuiCompass());
+        MinecraftForge.EVENT_BUS.register(new GuiMagika());
+        MinecraftForge.EVENT_BUS.register(new GuiHealth());
+        MinecraftForge.EVENT_BUS.register(new GuiStamina());
+
         proxy.init(event);
     }
 

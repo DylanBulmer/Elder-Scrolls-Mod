@@ -32,7 +32,6 @@ public class GuiMagika extends Gui {
                 GlStateManager.enableAlpha();
                 GlStateManager.color(1,1,1,0.5F);
                 drawTexturedModalRect(30, bottomY - 30, 0, 170, guiWidth, guiHeight);
-                GlStateManager.resetColor();
             }
             GlStateManager.popMatrix();
 

@@ -1,4 +1,4 @@
-package com.piggahbrostudios.elderscrollsmod.gui;
+package com.piggahbrostudios.elderscrollsmod.util.handlers;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;

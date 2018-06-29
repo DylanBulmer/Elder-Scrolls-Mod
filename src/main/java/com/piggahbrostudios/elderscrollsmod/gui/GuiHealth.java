@@ -33,7 +33,6 @@ public class GuiHealth extends Gui {
                 GlStateManager.enableAlpha();
                 GlStateManager.color(1,1,1,0.5F);
                 drawTexturedModalRect(centerX - (guiWidth / 2), bottomY - 30, 0, 170, guiWidth, guiHeight);
-                GlStateManager.resetColor();
             }
             GlStateManager.popMatrix();
 

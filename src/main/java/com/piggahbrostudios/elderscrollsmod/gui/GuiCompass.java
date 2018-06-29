@@ -4,6 +4,7 @@ import com.piggahbrostudios.elderscrollsmod.util.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -11,7 +12,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.io.IOException;
 
-public class GuiCompass extends Gui {
+public class GuiCompass extends GuiScreen {
 
     private final ResourceLocation texture = new ResourceLocation(Reference.MODID, "textures/gui/general.png");
     private int guiHeight = 20;
@@ -31,7 +32,6 @@ public class GuiCompass extends Gui {
                 GlStateManager.enableAlpha();
                 GlStateManager.color(1,1,1,0.5F);
                 drawTexturedModalRect(centerX - (guiWidth/2), 0, 0, 0, guiWidth, guiHeight);
-                GlStateManager.resetColor();
             }
             GlStateManager.popMatrix();
         }

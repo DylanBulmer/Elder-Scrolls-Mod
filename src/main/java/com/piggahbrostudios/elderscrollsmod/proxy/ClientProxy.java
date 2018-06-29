@@ -1,9 +1,8 @@
 package com.piggahbrostudios.elderscrollsmod.proxy;
 
 import com.piggahbrostudios.elderscrollsmod.Main;
-import com.piggahbrostudios.elderscrollsmod.gui.*;
+import com.piggahbrostudios.elderscrollsmod.util.handlers.GuiHandler;
 import com.piggahbrostudios.elderscrollsmod.util.handlers.KeyInputHandler;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -30,11 +29,6 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void postInit(FMLPostInitializationEvent event) {
-
-        MinecraftForge.EVENT_BUS.register(new GuiCompass());
-        MinecraftForge.EVENT_BUS.register(new GuiMagika());
-        MinecraftForge.EVENT_BUS.register(new GuiHealth());
-        MinecraftForge.EVENT_BUS.register(new GuiStamina());
 
     }
 

@@ -28,19 +28,19 @@ public class GuiStamina extends Gui {
             int width = mc.displayWidth / 2;
             int bottomY = mc.displayHeight / 2;
 
+            float oneUnit = (float)bar_width / mc.player.getMaxHealth();
+            int currentWidth = (int)(oneUnit * mc.player.getHealth());
+
             GlStateManager.pushMatrix();
             {
                 GlStateManager.enableAlpha();
                 GlStateManager.color(1,1,1,0.5F);
                 drawTexturedModalRect(width - 30 - guiWidth, bottomY - 30, 0, 170, guiWidth, guiHeight);
-                GlStateManager.resetColor();
+
+                GlStateManager.color(1,1,1,1);
+                drawTexturedModalRect(width - 30 - guiWidth + ((guiWidth - bar_width) / 2), bottomY - 26, bar_x + (currentWidth - bar_width), bar_y, currentWidth, 5);
             }
             GlStateManager.popMatrix();
-
-            float oneUnit = (float)bar_width / mc.player.getMaxHealth();
-            int currentWidth = (int)(oneUnit * mc.player.getHealth());
-
-            drawTexturedModalRect(width - 30 - guiWidth + ((guiWidth - bar_width) / 2),bottomY - 26,bar_x + (currentWidth - bar_width), bar_y, currentWidth,5);
         }
     }
 
