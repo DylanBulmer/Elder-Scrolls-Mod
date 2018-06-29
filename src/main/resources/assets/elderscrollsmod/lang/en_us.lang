@@ -1,7 +1,7 @@
-# English US Language file for Ender Scrolls
+# English US Language file for Elder Scrolls Mod
 
 #Creative Tabs
-itemGroup.tab_elderscrollsmod=Ender Scrolls
+itemGroup.tab_elderscrollsmod=Elder Scrolls Mod
 
 #Items
 item.steel_ingot.name=Steel Ingot
@@ -25,5 +25,5 @@ tile.glass_sword.name=Glass Sword
 tile.glass_dagger.name=Glass Dagger
 
 #Keybinds
-key.MENU=Ender Scrolls Menu
-key.categories.elderscrollsmod=Ender Scrolls
+key.MENU=Elder Scrolls Menu
+key.categories.elderscrollsmod=Elder Scrolls Mod

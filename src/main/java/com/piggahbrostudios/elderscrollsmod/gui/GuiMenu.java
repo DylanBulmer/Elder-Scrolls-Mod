@@ -7,7 +7,6 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
@@ -15,7 +14,7 @@ import java.io.IOException;
 
 public class GuiMenu extends GuiScreen {
 
-    ResourceLocation texture = new ResourceLocation(Reference.MODID, "textures/gui/compass.png");
+    ResourceLocation texture = new ResourceLocation(Reference.MODID, "textures/gui/general.png");
     int guiHeight = 150;
     int guiWidth = 256;
 

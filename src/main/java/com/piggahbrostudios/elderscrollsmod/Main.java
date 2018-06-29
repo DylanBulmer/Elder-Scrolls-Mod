@@ -1,12 +1,15 @@
 package com.piggahbrostudios.elderscrollsmod;
 
+import com.piggahbrostudios.elderscrollsmod.gui.GuiCompass;
 import com.piggahbrostudios.elderscrollsmod.init.Keybinds;
 import com.piggahbrostudios.elderscrollsmod.init.ModRecipes;
 import com.piggahbrostudios.elderscrollsmod.proxy.CommonProxy;
 import com.piggahbrostudios.elderscrollsmod.tab.CreativeTab;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
 import com.piggahbrostudios.elderscrollsmod.init.ModOres;
+import com.piggahbrostudios.elderscrollsmod.util.handlers.HudRenderHandler;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -48,7 +51,7 @@ public class Main {
     public void init(FMLInitializationEvent event) {
 
         ModRecipes.init();
-
+        MinecraftForge.EVENT_BUS.register(new HudRenderHandler());
         proxy.init(event);
     }
 
