@@ -42,7 +42,7 @@ public class ModEventHandler {
         if (event.getEntity() instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) event.getEntity();
 
-            // Add items to players' inventory
+            // Add items to players' inventory on each login
             //player.inventory.addItemStackToInventory(new ItemStack(ModItems.ELVEN_DAGGER));
         }
     }
@@ -64,7 +64,7 @@ public class ModEventHandler {
 
             IStorage storage = getHandler(player);
 
-            // Do these things every 5 ticks
+            // Do these every 5 ticks
             if (storage.getCurrentTick() % 5 == 0) {
 
                 // Update position
