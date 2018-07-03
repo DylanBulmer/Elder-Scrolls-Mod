@@ -10,7 +10,7 @@ public class HudRenderHandler {
     private Minecraft mc;
 
     @SubscribeEvent
-    public void onHudRender(RenderGameOverlayEvent event) {
+    public void onHudRender(RenderGameOverlayEvent.Pre event) {
 
         mc = Minecraft.getMinecraft();
 
@@ -31,6 +31,12 @@ public class HudRenderHandler {
             } else if (event.getType() == ElementType.EXPERIENCE) {
                 event.setCanceled(true);
             } else if (event.getType() == ElementType.HOTBAR) {
+                event.setCanceled(true);
+            } else if (event.getType() == ElementType.FOOD) {
+                event.setCanceled(true);
+            } else if (event.getType() == ElementType.ARMOR) {
+                event.setCanceled(true);
+            } else if (event.getType() == ElementType.EXPERIENCE) {
                 event.setCanceled(true);
 //            } else if (event.getType() == ElementType.BOSSHEALTH) {
 //                event.setCanceled(true);

@@ -1,5 +1,8 @@
 package com.piggahbrostudios.elderscrollsmod;
 
+import com.piggahbrostudios.elderscrollsmod.capabilities.IStorage;
+import com.piggahbrostudios.elderscrollsmod.capabilities.Storage;
+import com.piggahbrostudios.elderscrollsmod.capabilities.StorageHandler;
 import com.piggahbrostudios.elderscrollsmod.gui.GuiCompass;
 import com.piggahbrostudios.elderscrollsmod.gui.GuiHealth;
 import com.piggahbrostudios.elderscrollsmod.gui.GuiMagika;
@@ -11,8 +14,12 @@ import com.piggahbrostudios.elderscrollsmod.tab.CreativeTab;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
 import com.piggahbrostudios.elderscrollsmod.init.ModOres;
 import com.piggahbrostudios.elderscrollsmod.util.handlers.HudRenderHandler;
+import com.piggahbrostudios.elderscrollsmod.util.handlers.ModEventHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.CapabilityInject;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -25,6 +32,9 @@ import org.apache.logging.log4j.Logger;
 public class Main {
 
     private static Logger logger;
+
+    @CapabilityInject(IStorage.class)
+    public static final Capability<IStorage> CAPABILITY_STORAGE = null;
 
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
     public static CommonProxy proxy;
@@ -44,7 +54,8 @@ public class Main {
         // setup pre init
         proxy.preInit(event);
         ModOres.mainRegistry();
-        Keybinds.register();
+
+        CapabilityManager.INSTANCE.register(IStorage.class, new StorageHandler(), Storage::new);
 
         // get the logger
         logger = event.getModLog();
@@ -55,19 +66,14 @@ public class Main {
 
         ModRecipes.init();
 
-        MinecraftForge.EVENT_BUS.register(new HudRenderHandler());
-
-        MinecraftForge.EVENT_BUS.register(new GuiCompass());
-        MinecraftForge.EVENT_BUS.register(new GuiMagika());
-        MinecraftForge.EVENT_BUS.register(new GuiHealth());
-        MinecraftForge.EVENT_BUS.register(new GuiStamina());
-
         proxy.init(event);
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
 
+
+        MinecraftForge.EVENT_BUS.register(new ModEventHandler());
         proxy.postInit(event);
     }
 }

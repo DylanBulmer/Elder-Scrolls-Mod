@@ -39,7 +39,7 @@ public class GuiMenu extends GuiScreen {
         items.x = centerX + 90;
         items.y = centerY - (fontRenderer.FONT_HEIGHT / 2);
 
-
+        /*
         GlStateManager.pushMatrix();
         {
             GlStateManager.translate(centerX + 50, centerY - 100, 0);
@@ -47,6 +47,7 @@ public class GuiMenu extends GuiScreen {
             mc.getRenderItem().renderItemAndEffectIntoGUI(new ItemStack(ModItems.ELVEN_DAGGER), 0,0);
         }
         GlStateManager.popMatrix();
+        */
 
         drawCenteredString(fontRenderer, "Map", centerX, centerY + 55, 0xFFFFFF);
         drawString(fontRenderer, "Magic", centerX - (90 + fontRenderer.getStringWidth("Magic")) , centerY - 5, 0xFFFFFF);

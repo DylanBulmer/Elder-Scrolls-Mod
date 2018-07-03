@@ -1,5 +1,6 @@
 package com.piggahbrostudios.elderscrollsmod.gui;
 
+import com.piggahbrostudios.elderscrollsmod.capabilities.IStorage;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
@@ -7,6 +8,8 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import static com.piggahbrostudios.elderscrollsmod.capabilities.Storage.getHandler;
 
 public class GuiMagika extends Gui {
 
@@ -20,8 +23,11 @@ public class GuiMagika extends Gui {
 
     @SubscribeEvent
     public void renderOverlay (RenderGameOverlayEvent event) {
-        if (event.getType() == RenderGameOverlayEvent.ElementType.TEXT) {
-            Minecraft mc = Minecraft.getMinecraft();
+
+        Minecraft mc = Minecraft.getMinecraft();
+        final IStorage storage = getHandler(mc.player);
+
+        if (event.getType() == RenderGameOverlayEvent.ElementType.TEXT && !storage.isMagikaFull()) {
 
             mc.renderEngine.bindTexture(texture);
 
@@ -30,17 +36,19 @@ public class GuiMagika extends Gui {
             GlStateManager.pushMatrix();
             {
                 GlStateManager.enableAlpha();
+                GlStateManager.enableBlend();
                 GlStateManager.color(1,1,1,0.5F);
                 drawTexturedModalRect(30, bottomY - 30, 0, 170, guiWidth, guiHeight);
             }
             GlStateManager.popMatrix();
 
-            float oneUnit = (float)bar_width / mc.player.getMaxHealth();
-            int currentWidth = (int)(oneUnit * mc.player.getHealth());
+            float oneUnit = (float)bar_width / storage.getMaxMagika();
+            int currentWidth = (int)(oneUnit * storage.getMagika());
 
             GlStateManager.pushMatrix();
             {
-                drawTexturedModalRect(30 + ((guiWidth - bar_width) / 2), bottomY - 26, bar_x + (currentWidth - bar_width), bar_y, currentWidth, 5);
+                GlStateManager.color(1,1,1,1);
+                drawTexturedModalRect(30 + ((guiWidth - bar_width) / 2) + ((bar_width - currentWidth)/2), bottomY - 26, bar_x + (bar_width - currentWidth), bar_y, currentWidth, 5);
             }
             GlStateManager.popMatrix();
         }
