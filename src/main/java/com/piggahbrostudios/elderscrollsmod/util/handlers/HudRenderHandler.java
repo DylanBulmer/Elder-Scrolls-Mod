@@ -16,27 +16,11 @@ public class HudRenderHandler {
 
         if (Minecraft.getMinecraft().currentScreen == null) {
 
-            if (event.getType() == ElementType.HEALTH) {
-                event.setCanceled(true);
-            } else if (event.getType() == ElementType.AIR) {
+            if (event.getType() == ElementType.AIR) {
                 event.setCanceled(true);
             } else if (event.getType() == ElementType.HEALTHMOUNT) {
                 event.setCanceled(true);
-            } else if (event.getType() == ElementType.FOOD) {
-                event.setCanceled(true);
             } else if (event.getType() == ElementType.JUMPBAR) {
-                event.setCanceled(true);
-            } else if (event.getType() == ElementType.CROSSHAIRS) {
-                event.setCanceled(true);
-            } else if (event.getType() == ElementType.EXPERIENCE) {
-                event.setCanceled(true);
-            } else if (event.getType() == ElementType.HOTBAR) {
-                event.setCanceled(true);
-            } else if (event.getType() == ElementType.FOOD) {
-                event.setCanceled(true);
-            } else if (event.getType() == ElementType.ARMOR) {
-                event.setCanceled(true);
-            } else if (event.getType() == ElementType.EXPERIENCE) {
                 event.setCanceled(true);
 //            } else if (event.getType() == ElementType.BOSSHEALTH) {
 //                event.setCanceled(true);

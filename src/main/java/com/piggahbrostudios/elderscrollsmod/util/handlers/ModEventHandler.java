@@ -1,21 +1,16 @@
 package com.piggahbrostudios.elderscrollsmod.util.handlers;
 
 import com.piggahbrostudios.elderscrollsmod.capabilities.IStorage;
-import com.piggahbrostudios.elderscrollsmod.capabilities.Provider;
-import com.piggahbrostudios.elderscrollsmod.init.ModItems;
+import com.piggahbrostudios.elderscrollsmod.capabilities.StorageProvider;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.stats.StatBase;
-import net.minecraft.util.FoodStats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -27,7 +22,7 @@ public class ModEventHandler {
     public void attachCapabilities(AttachCapabilitiesEvent<Entity> event) {
 
         if (event.getObject() instanceof EntityPlayer) {
-            event.addCapability(new ResourceLocation(Reference.MODID), new Provider());
+            event.addCapability(new ResourceLocation(Reference.MODID), new StorageProvider());
         }
     }
 

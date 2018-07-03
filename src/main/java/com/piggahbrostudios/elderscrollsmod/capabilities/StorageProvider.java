@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 
 import static com.piggahbrostudios.elderscrollsmod.Main.CAPABILITY_STORAGE;
 
-public class Provider implements ICapabilitySerializable<NBTTagCompound> {
+public class StorageProvider implements ICapabilitySerializable<NBTTagCompound> {
 
     IStorage instance = CAPABILITY_STORAGE.getDefaultInstance();
 

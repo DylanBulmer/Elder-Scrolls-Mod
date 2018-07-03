@@ -22,28 +22,33 @@ public class GuiHealth extends Gui {
     public void renderOverlay (RenderGameOverlayEvent event) {
         Minecraft mc = Minecraft.getMinecraft();
 
-        if (event.getType() == RenderGameOverlayEvent.ElementType.TEXT && mc.player.getHealth() < mc.player.getMaxHealth()) {
+        if (event.getType() == RenderGameOverlayEvent.ElementType.HEALTH) {
 
-            mc.renderEngine.bindTexture(texture);
+            event.setCanceled(true);
 
-            int centerX = mc.displayWidth / 4;
-            int bottomY = mc.displayHeight / 2;
+            if (mc.player.getHealth() < mc.player.getMaxHealth()) {
 
-            GlStateManager.pushMatrix();
-            {
-                GlStateManager.enableAlpha();
-                GlStateManager.enableBlend();
-                GlStateManager.color(1,1,1,0.5F);
-                drawTexturedModalRect(centerX - (guiWidth / 2), bottomY - 30, 0, 170, guiWidth, guiHeight);
-            }
-            GlStateManager.popMatrix();
+                mc.renderEngine.bindTexture(texture);
 
-            float oneUnit = (float)bar_width / mc.player.getMaxHealth();
-            int currentWidth = (int)(oneUnit * mc.player.getHealth());
+                int centerX = mc.displayWidth / 4;
+                int bottomY = mc.displayHeight / 2;
 
-            {
-                GlStateManager.color(1,1,1,1);
-                drawTexturedModalRect((centerX - (guiWidth / 2)) + ((guiWidth - bar_width)/ 2) + ((bar_width - currentWidth)/2), bottomY - 26, bar_x + (bar_width - currentWidth), bar_y, currentWidth, 5);
+                GlStateManager.pushMatrix();
+                {
+                    GlStateManager.enableAlpha();
+                    GlStateManager.enableBlend();
+                    GlStateManager.color(1, 1, 1, 0.5F);
+                    drawTexturedModalRect(centerX - (guiWidth / 2), bottomY - 30, 0, 170, guiWidth, guiHeight);
+                }
+                GlStateManager.popMatrix();
+
+                float oneUnit = (float) bar_width / mc.player.getMaxHealth();
+                int currentWidth = (int) (oneUnit * mc.player.getHealth());
+
+                {
+                    GlStateManager.color(1, 1, 1, 1);
+                    drawTexturedModalRect((centerX - (guiWidth / 2)) + ((guiWidth - bar_width) / 2) + ((bar_width - currentWidth) / 2), bottomY - 26, bar_x + (bar_width - currentWidth), bar_y, currentWidth, 5);
+                }
             }
         }
     }

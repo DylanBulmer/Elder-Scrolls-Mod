@@ -1,10 +1,7 @@
 package com.piggahbrostudios.elderscrollsmod.proxy;
 
 import com.piggahbrostudios.elderscrollsmod.Main;
-import com.piggahbrostudios.elderscrollsmod.gui.GuiCompass;
-import com.piggahbrostudios.elderscrollsmod.gui.GuiHealth;
-import com.piggahbrostudios.elderscrollsmod.gui.GuiMagika;
-import com.piggahbrostudios.elderscrollsmod.gui.GuiStamina;
+import com.piggahbrostudios.elderscrollsmod.gui.*;
 import com.piggahbrostudios.elderscrollsmod.init.Keybinds;
 import com.piggahbrostudios.elderscrollsmod.util.handlers.GuiHandler;
 import com.piggahbrostudios.elderscrollsmod.util.handlers.HudRenderHandler;
@@ -38,9 +35,14 @@ public class ClientProxy extends CommonProxy {
         NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 
         MinecraftForge.EVENT_BUS.register(new GuiCompass());
+        MinecraftForge.EVENT_BUS.register(new GuiCrosshair());
+
         MinecraftForge.EVENT_BUS.register(new GuiMagika());
         MinecraftForge.EVENT_BUS.register(new GuiHealth());
         MinecraftForge.EVENT_BUS.register(new GuiStamina());
+
+        // Gui Remover
+        MinecraftForge.EVENT_BUS.register(new GuiRemover());
     }
 
     @Override
