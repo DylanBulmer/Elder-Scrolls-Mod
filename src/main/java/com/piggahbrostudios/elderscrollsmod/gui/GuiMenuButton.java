@@ -28,10 +28,10 @@ public class GuiMenuButton extends GuiButton {
         if (visible) {
             mc.renderEngine.bindTexture(texture);
 
-            drawTexturedModalRect(this.x, this.y, this.u, this.v, width, height);
-
             if (this.isCentered) {
                 // Is centered
+                drawTexturedModalRect((float)(x - getButtonWidth() / 2), y, u, v, width, height);
+
                 if (mouseX >= x - (width/2) && mouseX <= x + (width/2) && mouseY >= y && mouseY <= y + height) {
                     // Is hovered
                     drawCenteredString(this.mc.fontRenderer, this.text, this.x, this.y, 0xFFFFFF);
@@ -41,6 +41,8 @@ public class GuiMenuButton extends GuiButton {
                 }
             } else {
                 // Is not centered
+                drawTexturedModalRect(this.x, this.y, this.u, this.v, width, height);
+
                 if (mouseX >= x && mouseX <= x + width && mouseY >= y && mouseY <= y + height) {
                     // Is hovered
                     drawString(this.mc.fontRenderer, this.text, this.x, this.y, 0xFFFFFF);

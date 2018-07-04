@@ -1,10 +1,15 @@
 package com.piggahbrostudios.elderscrollsmod.gui;
 
+import com.piggahbrostudios.elderscrollsmod.init.ModItems;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.inventory.GuiInventory;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
+import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
@@ -46,16 +51,6 @@ public class GuiMenu extends GuiScreen {
         magic.x = centerX - (90 + fontRenderer.getStringWidth("Magic"));
         magic.y = centerY - (fontRenderer.FONT_HEIGHT / 2);
 
-        /*
-        GlStateManager.pushMatrix();
-        {
-            GlStateManager.translate(centerX + 50, centerY - 100, 0);
-            GlStateManager.scale(4,4,1);
-            mc.getRenderItem().renderItemAndEffectIntoGUI(new ItemStack(ModItems.ELVEN_DAGGER), 0,0);
-        }
-        GlStateManager.popMatrix();
-        */
-
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 
@@ -64,8 +59,8 @@ public class GuiMenu extends GuiScreen {
 
         buttonList.clear();
         buttonList.add(skills = new GuiMenuButton(SKILLS, 0, 0, "Skills", true));
-        buttonList.add(items = new GuiMenuButton(ITEMS, 0, 0, "Items", false));
-        buttonList.add(map = new GuiMenuButton(MAP, 0, 0, "Map", true));
+        buttonList.add(items = new GuiMenuButton(ITEMS, 0, 0, "MC Items", false));
+        buttonList.add(map = new GuiMenuButton(MAP, 0, 0, "Mod Items", true));
         buttonList.add(magic = new GuiMenuButton(MAGIC, 0, 0, "Magic", false));
 
         super.initGui();
@@ -85,6 +80,7 @@ public class GuiMenu extends GuiScreen {
                 Minecraft.getMinecraft().displayGuiScreen(new GuiInventory(Minecraft.getMinecraft().player));
                 break;
             case MAP:
+                mc.displayGuiScreen(new com.piggahbrostudios.elderscrollsmod.gui.GuiInventory());
                 break;
             case MAGIC:
                 break;
