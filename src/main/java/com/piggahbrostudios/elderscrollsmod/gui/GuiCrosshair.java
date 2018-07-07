@@ -4,6 +4,7 @@ import com.piggahbrostudios.elderscrollsmod.capabilities.IStorage;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -40,8 +41,10 @@ public class GuiCrosshair extends GuiScreen {
 
             mc.renderEngine.bindTexture(texture);
 
-            int centerX = mc.displayWidth / 4;
-            int centerY = mc.displayHeight / 4;
+            ScaledResolution resolution = new ScaledResolution(mc);
+
+            int centerX = resolution.getScaledWidth() / 2;
+            int centerY = resolution.getScaledHeight() / 2;
 
 
             if (player.isSprinting()) {

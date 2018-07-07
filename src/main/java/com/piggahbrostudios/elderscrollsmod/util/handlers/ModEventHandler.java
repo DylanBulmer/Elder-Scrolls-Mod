@@ -64,11 +64,11 @@ public class ModEventHandler {
 
             IStorage storage = getHandler(player);
 
+            // Update position
+            storage.setPosition(player);
+
             // Do these every 5 ticks
             if (storage.getCurrentTick() % 5 == 0) {
-
-                // Update position
-                storage.setPosition(player);
 
                 // Remove stamina if sprinting
                 if (player.isSprinting()) {

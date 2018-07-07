@@ -3,6 +3,7 @@ package com.piggahbrostudios.elderscrollsmod.gui;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -25,7 +26,9 @@ public class GuiCompass extends GuiScreen {
 
             mc.renderEngine.bindTexture(texture);
 
-            int centerX = mc.displayWidth / 4;
+            ScaledResolution resolution = new ScaledResolution(mc);
+
+            int centerX = resolution.getScaledWidth() / 2;
 
             GlStateManager.pushMatrix();
             {
@@ -42,13 +45,11 @@ public class GuiCompass extends GuiScreen {
             int rightRotation = MathHelper.floor((double)(((player.rotationYaw + 45) * 4.0F) / 360.0F) + 0.5D) & 3;
             int leftRotation = MathHelper.floor((double)(((player.rotationYaw - 45) * 4.0F) / 360.0F) + 0.5D) & 3;
             int degree = MathHelper.floor((double)player.rotationYaw % 90);
-            float oneUnit = (float)innerGui / 180;
+            float oneUnit = (float)innerGui / 90;
 
             if (degree < 0) {
                 degree = 90 - Math.abs(degree);
             }
-
-            //System.out.println(degree);
 
             switch (rightRotation) {
                 case 0:
@@ -80,8 +81,11 @@ public class GuiCompass extends GuiScreen {
                     break;
             }
 
-            drawCenteredString(mc.fontRenderer, leftDirection, centerX - (int)(oneUnit * degree), 2 + (guiHeight - mc.fontRenderer.FONT_HEIGHT)/2, 0xFFFFFF);
-            drawCenteredString(mc.fontRenderer, rightDirection, centerX + (innerGui/2) - (int)(oneUnit * degree), 2 + (guiHeight - mc.fontRenderer.FONT_HEIGHT)/2, 0xFFFFFF);
+            if (degree < 45) {
+                drawCenteredString(mc.fontRenderer, leftDirection, centerX - (int) (oneUnit * degree), 2 + (guiHeight - mc.fontRenderer.FONT_HEIGHT) / 2, 0xFFFFFF);
+            } else {
+                drawCenteredString(mc.fontRenderer, rightDirection, centerX + innerGui - (int)(oneUnit * degree), 2 + (guiHeight - mc.fontRenderer.FONT_HEIGHT)/2, 0xFFFFFF);
+            }
         }
     }
 

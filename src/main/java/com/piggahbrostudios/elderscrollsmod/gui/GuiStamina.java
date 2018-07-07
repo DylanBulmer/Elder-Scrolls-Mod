@@ -4,6 +4,7 @@ import com.piggahbrostudios.elderscrollsmod.capabilities.IStorage;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -31,8 +32,10 @@ public class GuiStamina extends Gui {
 
             mc.renderEngine.bindTexture(texture);
 
-            int width = mc.displayWidth / 2;
-            int bottomY = mc.displayHeight / 2;
+            ScaledResolution resolution = new ScaledResolution(mc);
+
+            int width = resolution.getScaledWidth();
+            int bottomY = resolution.getScaledHeight();
 
             float oneUnit = (float)bar_width / storage.getMaxStamina();
             int currentWidth = (int)(oneUnit * storage.getStamina());

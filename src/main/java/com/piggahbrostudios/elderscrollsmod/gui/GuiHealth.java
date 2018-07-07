@@ -3,6 +3,7 @@ package com.piggahbrostudios.elderscrollsmod.gui;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -30,8 +31,10 @@ public class GuiHealth extends Gui {
 
                 mc.renderEngine.bindTexture(texture);
 
-                int centerX = mc.displayWidth / 4;
-                int bottomY = mc.displayHeight / 2;
+                ScaledResolution resolution = new ScaledResolution(mc);
+
+                int centerX = resolution.getScaledWidth() / 2;
+                int bottomY = resolution.getScaledHeight();
 
                 GlStateManager.pushMatrix();
                 {

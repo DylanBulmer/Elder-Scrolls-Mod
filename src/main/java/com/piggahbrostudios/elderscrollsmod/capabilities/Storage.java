@@ -21,12 +21,12 @@ public class Storage implements IStorage {
     private int resetTick = 20;
 
     // Track player's position and movement
-    private int currentX = 0,
-                currentY = 0,
-                currentZ = 0;
-    private int prevX = 0,
-                prevY = 0,
-                prevZ = 0;
+    private double currentX = 0,
+            currentY = 0,
+            currentZ = 0;
+    private double prevX = 0,
+            prevY = 0,
+            prevZ = 0;
 
     @Override
     public int getMagika() {
@@ -128,9 +128,9 @@ public class Storage implements IStorage {
         prevY = currentY;
         prevZ = currentZ;
 
-        currentX = player.getPosition().getX();
-        currentY = player.getPosition().getY();
-        currentZ = player.getPosition().getZ();
+        currentX = player.posX;
+        currentY = player.posY;
+        currentZ = player.posZ;
     }
 
     @Override
