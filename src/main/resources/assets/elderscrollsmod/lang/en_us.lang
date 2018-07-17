@@ -19,10 +19,10 @@ tile.malachite_ore.name=Malachite Ore
 tile.moonstone_ore.name=Moonstone Ore
 
 #Tools
-tile.elven_sword.name=Elven Sword
-tile.elven_dagger.name=Elven Dagger
-tile.glass_sword.name=Glass Sword
-tile.glass_dagger.name=Glass Dagger
+item.elven_sword.name=Elven Sword
+item.elven_dagger.name=Elven Dagger
+item.glass_sword.name=Glass Sword
+item.glass_dagger.name=Glass Dagger
 
 #Keybinds
 key.MENU=Elder Scrolls Menu

@@ -6,6 +6,14 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModOres {
 
+
+    // Must be a multiple of 5!
+    public static class rarity {
+        static int Common = 50;
+        static int SemiCommon = 25;
+        static int Rare = 10;
+    }
+
     public static void mainRegistry() {
 
         initWorldGen();
@@ -13,8 +21,8 @@ public class ModOres {
     }
 
     public static void initWorldGen() {
-        registerWorldGen(new OreGen((BlockOre) ModBlocks.MOONSTONE_ORE,10,64,50,10),0);
-        registerWorldGen(new OreGen((BlockOre) ModBlocks.MALACHITE_ORE,10,64,25,5),0);
+        registerWorldGen(new OreGen((BlockOre) ModBlocks.MOONSTONE_ORE,10,64,rarity.Common,rarity.Common / 5),0);
+        registerWorldGen(new OreGen((BlockOre) ModBlocks.MALACHITE_ORE,10,64,rarity.SemiCommon,rarity.SemiCommon / 5),0);
     }
 
     private static void registerWorldGen(OreGen oreGen, int weightedProbability) {

@@ -8,11 +8,11 @@
   ],
 
   "key": {
-    "M": { "item": "elderscrollsmod:moonstone_ingot" }
+    "M": { "item": "elderscrollsmod:malachite_ingot" }
   },
 
   "result": {
-    "item": "elderscrollsmod:moonstone_block",
+    "item": "elderscrollsmod:malachite_block",
     "count": 1
   }
 }

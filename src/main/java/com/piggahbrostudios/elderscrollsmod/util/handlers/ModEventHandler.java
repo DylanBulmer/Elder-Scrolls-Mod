@@ -64,6 +64,10 @@ public class ModEventHandler {
 
             IStorage storage = getHandler(player);
 
+            // Keep player at 8 food so player does not die or regen health and can still sprint
+            // I will need a new foodstats class later.
+            player.getFoodStats().setFoodLevel(8);
+
             // Update position
             storage.setPosition(player);
 
