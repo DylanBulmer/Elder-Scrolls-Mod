@@ -27,17 +27,16 @@ public class GuiMenuButton extends GuiButton {
     public void drawButton(Minecraft mc, int mouseX, int mouseY, float partialTicks) {
         if (visible) {
             mc.renderEngine.bindTexture(texture);
-
-            if (this.isCentered) {
+            if (isCentered) {
                 // Is centered
-                drawTexturedModalRect((float)(x - getButtonWidth() / 2), y, u, v, width, height);
+                drawTexturedModalRect(x - (width/2), y, u, v, width, height);
 
                 if (mouseX >= x - (width/2) && mouseX <= x + (width/2) && mouseY >= y && mouseY <= y + height) {
                     // Is hovered
-                    drawCenteredString(this.mc.fontRenderer, this.text, this.x, this.y, 0xFFFFFF);
+                    drawCenteredString(this.mc.fontRenderer, text, x, y, 0xFFFFFF);
                 } else {
                     // Is not hovered
-                    drawCenteredString(this.mc.fontRenderer, this.text, this.x, this.y, 0xCCCCCC);
+                    drawCenteredString(this.mc.fontRenderer, text, x, y, 0xCCCCCC);
                 }
             } else {
                 // Is not centered

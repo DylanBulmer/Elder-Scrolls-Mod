@@ -41,10 +41,13 @@ public class OreGen implements IWorldGenerator {
 
     private void runGenerator(WorldGenerator gen, World world, Random random, int chunkX, int chunkZ, int chance, int minHeight, int maxHeight) {
 
+        // Calculate how high the ore can generate
         int heightDiff = maxHeight - minHeight + 1;
         int x,y,z;
 
         for (int i = 0; i < chance; i++) {
+            // Bind X and Z to be maintained within the 16x16 chunk.
+            // Bind Y to -> min height < random y < min height + height difference
             x = chunkX + random.nextInt(16);
             y = minHeight + random.nextInt(heightDiff);
             z = chunkZ + random.nextInt(16);
