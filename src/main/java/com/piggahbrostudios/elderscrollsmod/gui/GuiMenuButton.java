@@ -7,16 +7,16 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiMenuButton extends GuiButton {
 
-    ResourceLocation texture = new ResourceLocation(Reference.MODID, "textures/gui/general.png");
+    private ResourceLocation texture = new ResourceLocation(Reference.MODID, "textures/gui/general.png");
 
-    Minecraft mc = Minecraft.getMinecraft();
+    private Minecraft mc = Minecraft.getMinecraft();
 
-    String text;
-    boolean isCentered;
-    int u = 0;
-    int v = 20;
+    private String text;
+    private boolean isCentered;
+    private int u = 0;
+    private int v = 20;
 
-    public GuiMenuButton (int buttonId, int x, int y, String text, boolean isCentered) {
+    GuiMenuButton(int buttonId, int x, int y, String text, boolean isCentered) {
         super(buttonId, x, y, Minecraft.getMinecraft().fontRenderer.getStringWidth(text), Minecraft.getMinecraft().fontRenderer.FONT_HEIGHT, text);
 
         this.text = text;
@@ -29,7 +29,7 @@ public class GuiMenuButton extends GuiButton {
             mc.renderEngine.bindTexture(texture);
             if (isCentered) {
                 // Is centered
-                drawTexturedModalRect(x - (width/2), y, u, v, width, height);
+                drawTexturedModalRect((x - width/2), y, u, v, width, height);
 
                 if (mouseX >= x - (width/2) && mouseX <= x + (width/2) && mouseY >= y && mouseY <= y + height) {
                     // Is hovered

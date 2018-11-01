@@ -1,34 +1,29 @@
 package com.piggahbrostudios.elderscrollsmod.gui;
 
-import com.piggahbrostudios.elderscrollsmod.init.ModItems;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.inventory.GuiInventory;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
 
 public class GuiMenu extends GuiScreen {
 
-    ResourceLocation texture = new ResourceLocation(Reference.MODID, "textures/gui/general.png");
-    int guiHeight = 150;
-    int guiWidth = 256;
+    private ResourceLocation texture = new ResourceLocation(Reference.MODID, "textures/gui/general.png");
+    private int guiHeight = 150;
+    private int guiWidth = 256;
 
-    GuiMenuButton skills;
-    GuiMenuButton items;
-    GuiMenuButton map;
-    GuiMenuButton magic;
+    private GuiMenuButton skills;
+    private GuiMenuButton items;
+    private GuiMenuButton map;
+    private GuiMenuButton magic;
 
-    final int SKILLS = 0;
-    final int ITEMS = 1;
-    final int MAP = 2;
-    final int MAGIC = 3;
+    private final int SKILLS = 0;
+    private final int ITEMS = 1;
+    private final int MAP = 2;
+    private final int MAGIC = 3;
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
@@ -66,7 +61,7 @@ public class GuiMenu extends GuiScreen {
         super.initGui();
     }
 
-    public void updateButtons() {
+    private void updateButtons() {
         items.enabled = true;
         items.visible = true;
     }

@@ -14,9 +14,9 @@ public class ModItems {
     public static final List<Item> ITEMS = new ArrayList<>();
 
     // Materials
-    public static final Item.ToolMaterial MATERIAL_STEEL = EnumHelper.addToolMaterial("material_steel", 1, 250, 6.0F, 2.0F, 15);
-    public static final Item.ToolMaterial MATERIAL_GLASS = EnumHelper.addToolMaterial("material_glass", 1, 250, 6.0F, 2.0F, 15);
-    public static final Item.ToolMaterial MATERIAL_ELVEN = EnumHelper.addToolMaterial("material_elven", 2, 300, 7.0F, 2.0F, 15);
+    private static final Item.ToolMaterial MATERIAL_STEEL = EnumHelper.addToolMaterial("material_steel", 1, 250, 6.0F, 2.0F, 15);
+    private static final Item.ToolMaterial MATERIAL_GLASS = EnumHelper.addToolMaterial("material_glass", 1, 250, 6.0F, 2.0F, 15);
+    private static final Item.ToolMaterial MATERIAL_ELVEN = EnumHelper.addToolMaterial("material_elven", 2, 300, 7.0F, 2.0F, 15);
 
     // Items
     public static final Item STEEL_INGOT = new ItemBase("steel_ingot");

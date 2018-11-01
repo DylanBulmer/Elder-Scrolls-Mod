@@ -14,13 +14,14 @@ public class ItemBase extends Item implements IHasModel {
         setRegistryName(name);
         setCreativeTab(Main.tab);
 
-        String[] names = name.toUpperCase().split("_");
+        name = name.toUpperCase();
+        name = name.replace("_", " ");
 
-        for (int i = 0; i < names.length; i++) {
-            if (i != names.length) {
-                this.name += names + " ";
-            }
-        }
+        /*String[] names = name.toUpperCase().split("_");
+
+        for (String part : names) {
+            this.name += part + " ";
+        }*/
 
         ModItems.ITEMS.add(this);
     }

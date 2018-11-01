@@ -1,10 +1,7 @@
 package com.piggahbrostudios.elderscrollsmod.gui;
 
-import com.piggahbrostudios.elderscrollsmod.init.ModBlocks;
 import com.piggahbrostudios.elderscrollsmod.init.ModItems;
-import com.piggahbrostudios.elderscrollsmod.item.ItemBase;
 import com.piggahbrostudios.elderscrollsmod.util.Reference;
-import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
@@ -14,9 +11,7 @@ import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
 import net.minecraft.util.ResourceLocation;
-import org.lwjgl.input.Keyboard;
 
 import java.io.IOException;
 

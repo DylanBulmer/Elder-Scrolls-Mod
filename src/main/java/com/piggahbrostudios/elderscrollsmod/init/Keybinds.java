@@ -14,7 +14,7 @@ public class Keybinds {
         // Remove Inventory KeyBind
         Minecraft.getMinecraft().gameSettings.keyBindInventory.setKeyCode(Keyboard.KEY_NONE);
 
-        // Create KeyBinds
+        // Create new inventory bind
         MENU = new KeyBinding("Menu", Keyboard.KEY_E, "key.categories.elderscrollsmod");
 
         // Register new KeyBinds
