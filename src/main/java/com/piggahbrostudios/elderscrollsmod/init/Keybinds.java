@@ -11,8 +11,18 @@ public class Keybinds {
 
     public static void register()
     {
+        // Get Minecraft instance
+        Minecraft mc = Minecraft.getMinecraft();
+
         // Remove Inventory KeyBind
-        Minecraft.getMinecraft().gameSettings.keyBindInventory.setKeyCode(Keyboard.KEY_NONE);
+        mc.gameSettings.keyBindInventory.setKeyCode(Keyboard.KEY_NONE);
+
+        // Remove Hotbar keybinds
+        KeyBinding[] hotbar = mc.gameSettings.keyBindsHotbar;
+
+        for (int i = 0; i < hotbar.length; i++) {
+            hotbar[i].setKeyCode(Keyboard.KEY_NONE);
+        }
 
         // Create new inventory bind
         MENU = new KeyBinding("Menu", Keyboard.KEY_E, "key.categories.elderscrollsmod");
