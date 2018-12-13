@@ -21,6 +21,7 @@ public class ClientProxy extends CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
 
         // keybind handler
+        Keybinds.register();
         MinecraftForge.EVENT_BUS.register(new KeyInputHandler());
 
         MinecraftForge.EVENT_BUS.register(new HudRenderHandler());
@@ -46,7 +47,6 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void postInit(FMLPostInitializationEvent event) {
-        Keybinds.register();
     }
 
     public void registerItemRenderer(Item item, int meta, String id) {

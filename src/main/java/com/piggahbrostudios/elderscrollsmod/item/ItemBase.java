@@ -15,7 +15,7 @@ public class ItemBase extends Item implements IHasModel {
         setCreativeTab(Main.tab);
 
         name = name.toUpperCase();
-        name = name.replace("_", " ");
+        this.name = name.replace("_", " ");
 
         /*String[] names = name.toUpperCase().split("_");
 

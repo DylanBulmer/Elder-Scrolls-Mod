@@ -24,6 +24,16 @@ public class Keybinds {
             hotbar[i].setKeyCode(Keyboard.KEY_NONE);
         }
 
+        new KeyBinding("", Keyboard.KEY_1, "");
+        new KeyBinding("", Keyboard.KEY_2, "");
+        new KeyBinding("", Keyboard.KEY_3, "");
+        new KeyBinding("", Keyboard.KEY_4, "");
+        new KeyBinding("", Keyboard.KEY_5, "");
+        new KeyBinding("", Keyboard.KEY_6, "");
+        new KeyBinding("", Keyboard.KEY_7, "");
+        new KeyBinding("", Keyboard.KEY_8, "");
+        new KeyBinding("", Keyboard.KEY_9, "");
+
         // Create new inventory bind
         MENU = new KeyBinding("Menu", Keyboard.KEY_E, "key.categories.elderscrollsmod");
 

@@ -1,6 +1,7 @@
 package com.piggahbrostudios.elderscrollsmod.init;
 
 import com.piggahbrostudios.elderscrollsmod.item.ItemBase;
+import com.piggahbrostudios.elderscrollsmod.item.spell.HealSpell;
 import com.piggahbrostudios.elderscrollsmod.item.tool.ToolSword;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSword;
@@ -33,5 +34,8 @@ public class ModItems {
     public static final ItemSword GLASS_DAGGER = new ToolSword("glass_dagger", MATERIAL_GLASS);
 
     //public static final ItemSpade STEEL_SHOVEL = new ToolSpade("steel_shovel", MATERIAL_STEEL);
+
+    // Spells
+    public static final HealSpell HEAL_SPELL = new HealSpell("heal_spell", (float) 0.5);
 
 }
