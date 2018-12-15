@@ -4,11 +4,11 @@ import net.minecraft.entity.player.EntityPlayer;
 
 public interface IStorage {
     // Magika Setup
-    int getMagika();
-    int getMaxMagika();
-    void setMagika(int magika);
-    void addMagika(int magika);
-    void removeMagika(int magika);
+    float getMagika();
+    float getMaxMagika();
+    void setMagika(float magika);
+    void addMagika(float magika);
+    void removeMagika(float magika);
     boolean isMagikaFull();
 
     // Stamina Setup

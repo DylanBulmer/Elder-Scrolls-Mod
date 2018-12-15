@@ -5,9 +5,13 @@ import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import org.lwjgl.input.Keyboard;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Keybinds {
 
     public static KeyBinding MENU;
+    public static List<KeyBinding> disabledBinds = new ArrayList<>();
 
     public static void register()
     {
@@ -24,15 +28,19 @@ public class Keybinds {
             hotbar[i].setKeyCode(Keyboard.KEY_NONE);
         }
 
-        new KeyBinding("", Keyboard.KEY_1, "");
-        new KeyBinding("", Keyboard.KEY_2, "");
-        new KeyBinding("", Keyboard.KEY_3, "");
-        new KeyBinding("", Keyboard.KEY_4, "");
-        new KeyBinding("", Keyboard.KEY_5, "");
-        new KeyBinding("", Keyboard.KEY_6, "");
-        new KeyBinding("", Keyboard.KEY_7, "");
-        new KeyBinding("", Keyboard.KEY_8, "");
-        new KeyBinding("", Keyboard.KEY_9, "");
+        disabledBinds.add(new KeyBinding("", Keyboard.KEY_1, ""));
+        disabledBinds.add(new KeyBinding("", Keyboard.KEY_2, ""));
+        disabledBinds.add(new KeyBinding("", Keyboard.KEY_3, ""));
+        disabledBinds.add(new KeyBinding("", Keyboard.KEY_4, ""));
+        disabledBinds.add(new KeyBinding("", Keyboard.KEY_5, ""));
+        disabledBinds.add(new KeyBinding("", Keyboard.KEY_6, ""));
+        disabledBinds.add(new KeyBinding("", Keyboard.KEY_7, ""));
+        disabledBinds.add(new KeyBinding("", Keyboard.KEY_8, ""));
+        disabledBinds.add(new KeyBinding("", Keyboard.KEY_9, ""));
+
+        for (int i = 0; i < disabledBinds.size(); i++) {
+            ClientRegistry.registerKeyBinding(disabledBinds.get(i));
+        }
 
         // Create new inventory bind
         MENU = new KeyBinding("Menu", Keyboard.KEY_E, "key.categories.elderscrollsmod");

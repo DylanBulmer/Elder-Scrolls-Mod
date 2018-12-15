@@ -12,7 +12,7 @@ import static com.piggahbrostudios.elderscrollsmod.Main.CAPABILITY_STORAGE;
 
 public class StorageProvider implements ICapabilitySerializable<NBTTagCompound> {
 
-    IStorage instance = CAPABILITY_STORAGE.getDefaultInstance();
+    private IStorage instance = CAPABILITY_STORAGE.getDefaultInstance();
 
     @Override
     public boolean hasCapability(@Nonnull Capability<?> capability, @Nullable EnumFacing facing) {

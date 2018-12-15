@@ -32,6 +32,9 @@ public class ModEventHandler {
         final IStorage original = getHandler(event.getOriginal());
         final IStorage clone = getHandler(event.getEntity());
 
+        assert clone != null;
+        assert original != null;
+
         clone.setMagika(original.getMagika());
         clone.setStamina(original.getStamina());
 
@@ -63,6 +66,7 @@ public class ModEventHandler {
             EntityPlayer player = (EntityPlayer) event.getEntity();
 
             IStorage storage = getHandler(player);
+            assert storage != null;
 
             // Keep player at 8 food so player does not die or regen health and can still sprint
             // I will need a new foodstats class later.
@@ -91,7 +95,7 @@ public class ModEventHandler {
 
                 // add magika
                 if (storage.getMagika() < storage.getMaxMagika())
-                    storage.addMagika(2);
+                    storage.addMagika((float) 0.5);
 
                 // add stamina
                 if (storage.getStamina() < storage.getMaxStamina() && !player.isSprinting()) {

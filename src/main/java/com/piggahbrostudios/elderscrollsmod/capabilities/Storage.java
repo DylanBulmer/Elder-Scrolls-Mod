@@ -9,8 +9,8 @@ import static com.piggahbrostudios.elderscrollsmod.Main.CAPABILITY_STORAGE;
 public class Storage implements IStorage {
 
     // Magika storage
-    private int magika = 20;
-    private int maxMagika = 20;
+    private float magika = 20;
+    private float maxMagika = 20;
 
     // Stamina Storage
     private int stamina = 20;
@@ -29,22 +29,22 @@ public class Storage implements IStorage {
             prevZ = 0;
 
     @Override
-    public int getMagika() {
+    public float getMagika() {
         return this.magika;
     }
 
     @Override
-    public int getMaxMagika() {
+    public float getMaxMagika() {
         return this.maxMagika;
     }
 
     @Override
-    public void setMagika(int magika) {
+    public void setMagika(float magika) {
         this.magika = magika;
     }
 
     @Override
-    public void addMagika(int magika) {
+    public void addMagika(float magika) {
         this.magika += magika;
 
         if (this.magika > this.maxMagika) {
@@ -53,7 +53,7 @@ public class Storage implements IStorage {
     }
 
     @Override
-    public void removeMagika(int magika) {
+    public void removeMagika(float magika) {
         this.magika -= magika;
 
         if (this.magika < 0)

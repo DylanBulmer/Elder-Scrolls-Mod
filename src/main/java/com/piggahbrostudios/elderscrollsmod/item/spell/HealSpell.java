@@ -1,7 +1,7 @@
 package com.piggahbrostudios.elderscrollsmod.item.spell;
 
 import com.piggahbrostudios.elderscrollsmod.Main;
-import com.piggahbrostudios.elderscrollsmod.init.ModItems;
+import com.piggahbrostudios.elderscrollsmod.capabilities.IStorage;
 import com.piggahbrostudios.elderscrollsmod.util.IHasModel;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -10,6 +10,8 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
+
+import static com.piggahbrostudios.elderscrollsmod.capabilities.Storage.getHandler;
 
 public class HealSpell extends SpellBase implements IHasModel {
 
@@ -25,11 +27,13 @@ public class HealSpell extends SpellBase implements IHasModel {
 
     @Override
     @Nonnull
-    public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand handIn) {
+    public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player,@Nonnull EnumHand handIn) {
 
-        System.out.println("On item use...");
+        IStorage storage = getHandler(player);
 
-        if (player.getHealth() < player.getMaxHealth()) {
+        assert storage != null;
+        if (player.getHealth() < player.getMaxHealth() && storage.getMagika() > 0) {
+            storage.removeMagika(healthPerTick * 2);
             player.setHealth(player.getHealth() + healthPerTick);
         }
 

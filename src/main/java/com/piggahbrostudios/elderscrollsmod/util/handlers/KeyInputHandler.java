@@ -15,5 +15,14 @@ public class KeyInputHandler {
             // Open menu
             Minecraft.getMinecraft().displayGuiScreen(new GuiMenu());
         }
+
+        // NOT WORKING?!?!
+        for (int i = 0; i < Keybinds.disabledBinds.size(); i++) {
+            if (Keybinds.disabledBinds.get(i).isPressed()) {
+                if (event.isCancelable()) {
+                    event.setCanceled(true);
+                }
+            }
+        }
     }
 }

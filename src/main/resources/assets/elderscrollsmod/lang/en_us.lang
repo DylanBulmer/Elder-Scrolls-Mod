@@ -10,6 +10,7 @@ item.moonstone_ingot.name=Moonstone Ingot
 item.moonstone_nugget.name=Moonstone Nugget
 item.malachite_nugget.name=Malachite Nugget
 item.steel_nugget.name=Steel Nugget
+item.heal_spell.name=Spell of Healing
 
 #Blocks
 tile.steel_block.name=Block of Steel

@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 
 public class ItemBase extends Item implements IHasModel {
 
-    private String name = "";
+    private String name;
 
     public ItemBase(String name) {
         setUnlocalizedName(name);
@@ -16,12 +16,6 @@ public class ItemBase extends Item implements IHasModel {
 
         name = name.toUpperCase();
         this.name = name.replace("_", " ");
-
-        /*String[] names = name.toUpperCase().split("_");
-
-        for (String part : names) {
-            this.name += part + " ";
-        }*/
 
         ModItems.ITEMS.add(this);
     }
